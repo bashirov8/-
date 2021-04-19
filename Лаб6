@@ -1,0 +1,48 @@
+#include <stdio.h> // Подключение библиотеки ввода и вывода
+
+int main()
+{
+	int A = 1, B = 2, C;
+	C = A;
+	A = B;
+	B = C;
+	printf("A = %d, B = %d \n", A, B);
+
+	int d;
+	A = 1, B = 2, C = 3;
+	d = C;
+	C = B;
+	B = A;
+	A = d;
+	printf("A = %d, B = %d, C = %d \n", A, B, C);
+
+	A = 1, B = 2, C = 3;
+	d = B;
+	B = C;
+	C = A;
+	A = d;
+	printf("A = %d, B = %d, C = %d \n", A, B, C);
+
+	int x = 3, y;
+	d = x * x;
+	y = 3 * d * d * d - 6 * d - 7;
+	printf("y = %d \n", y);
+
+	x = 5;
+	d = (x - 3) * (x - 3) * (x - 3);
+	y = 4 * d * d - 7 * d + 2;
+	printf("y = %d \n", y);
+
+	A = 2;
+	d = A * A;
+	d = d * d;
+	d = d * d;
+	printf("A^8 = %d \n", d);
+
+	A = 2;
+	int c;
+	c = A * A * A;
+	d = c * c;
+	d = d * d * c;
+	printf("A^15 = %d \n", d);
+}
