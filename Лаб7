@@ -1,0 +1,33 @@
+#include <stdio.h> 
+#include <math.h>
+
+int main()
+{
+	const float pi = 3.14;
+	float d = 120, r;
+	r = d / 180 * pi;
+	printf("%.0f degrees = %.2f radians \n", d, r);
+
+	r = 2;
+	d = r / pi * 180;
+	printf("%.2f radians = %.2f degrees \n", r, d);
+
+	float x = 3, a = 69, y = 5, z1, zy;
+	z1 = a / x;
+	zy = z1 * y;
+	printf("1 kg = %.2f, %.0f kg = %.2f \n", z1, y, zy);
+
+	int v1 = 90, v2 = 120, s1 = 50, t = 5, s;
+	s = s1 + v1 * t + v2 * t;
+	printf("t = %d hours, S = %d km \n", t, s);
+
+	int b = -17;
+	a = 4;
+	x = (-b) / a;
+	printf("x = %.2f \n", x);
+
+	int a1 = 1, b1 = -1, c1 = 4, a2 = 3, b2 = 1, c2 = 8;
+	y = (c2 - a2 * c1) / (b2 * a1 - a2 * b1);
+	x = (c1 - b1 * y) / a1;
+	printf("x = %.2f, y = %.2f \n", x, y);
+}
