@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	int x1 = 2, y1 = -4, x2 = 7, y2 = - 1;
+	float AB;
+	AB = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+	printf("Расстояние между точками AB: %.2f \n", AB);
+	
+	int A = 6, B = 10, C = 26;
+	float S, AC, BC;
+	AC = fabs(C - A);
+	BC = fabs(C - B);
+	S = AC + BC;
+	printf("Длина отрезка AC: %.0f, длина отрезка BC: %.0f, сумма длин двух отрезков: %.0f \n", AC, BC, S);
+	
+	A = -4;
+	C = 10;
+	B = 25;
+	S = fabs(C - A) * fabs(B - C);
+	printf("Произведение длин отрезков AC и BC: %.0f \n", S);
+	
+	x1 = 2;
+	y1 = 8;
+	x2 = -7;
+	y2 = -6;
+	float P;
+	P = 2 * (fabs(x1 - x2) + fabs(y1 - y2));
+	S = fabs(x1 - x2) * fabs(y1 - y2);
+	printf("Периметр прямоугольника: %.0f, площадь прямоугольника: %.0f \n", P, S);
+	
+	x1 = 3;
+	y1 = 7;
+	x2 = -12;
+	y2 = 8;
+	int x3 = 18, y3 = -10;
+	AB = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+	BC = sqrt(pow(x3 - x2, 2) + pow(y3 - y2, 2));
+	AC = sqrt(pow(x1 - x3, 2) + pow(y1 - y3, 2));
+	P = AB + BC + AC;
+	S = sqrt((P / 2) * (P / 2 - AB) * (P / 2 - BC) * (P / 2 - AC));
+	printf("Периметр треугольник: %.2f, площадь треугольника: %.2f \n", P, S);
+}
