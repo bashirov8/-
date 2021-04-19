@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+	div_t x; // Первое задание
+	float b1, kb;
+	scanf_s("%f", &b1);
+	x = div(b1, 1024);
+	kb = x.quot;
+	if (x.rem > 0){
+		kb += 1;
+	}
+	printf("%.0f \n", kb);
+
+	int a, b; // Второе задание
+	scanf_s("%d", &a);
+	scanf_s("%d", &b);
+	x = div(a, b);
+	printf("%d \n", x.quot);
+
+	int A, B; // Третье задание
+	scanf_s("%d", &A);
+	scanf_s("%d", &B);
+	x = div(A, B);
+	printf("%d \n", x.rem);
+
+	int S; // Четвёртое задание
+	scanf_s("%d", &S);
+	x = div(S, 10);
+	S = x.rem * 10 + x.quot;
+	printf("%d \n", S);
+
+	int P; // Пятое задание
+	scanf_s("%d", &P);
+	x = div(P, 100);
+	P = x.rem * 10 + x.quot;
+	printf("%d", P);
+}
