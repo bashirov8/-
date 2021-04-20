@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+int main()
+{
+	int P, N, K, i, P1, P2;
+	P1 = 1;
+	P2 = 0;
+	P = 0;
+	scanf_s("%d", &N);
+	for (i = 2; P != N; i++) {
+		P = P1 + P2;
+		P2 = P1;
+		P1 = P;
+		K = i;
+	}
+	printf("%d", K);
+}
