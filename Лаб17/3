@@ -1,0 +1,25 @@
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+#include <malloc.h>
+
+int main()
+{
+	int* a;
+	int N, i, min;
+	scanf_s("%d", &N);
+	a = (int*)malloc(N * sizeof(int));
+	min = a[2];
+	for (i = 0; i < N; i++){
+		scanf_s("%d", &a[i]);
+	}
+	min = a[2];
+	for (i = 4; i < N; i = i + 2) {
+		if (a[i] < min)
+			min = a[i];
+	}
+	printf("%d \n", min);
+	free(a);
+	return 0;
+}
