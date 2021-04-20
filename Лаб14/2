@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+int main()
+{
+	int A, B, P;
+	scanf_s("%d", &A);
+	scanf_s("%d", &B);
+	P = 0;
+	while (P < A) {
+		P += B;
+	}
+	if (P > A) {
+		P -= B;
+	}
+	B = A - P;
+	printf("%d \n", B);
+}
