@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+#include <malloc.h>
+
+int main()
+{
+	int* a;
+	int N, i, max;
+	max = 0;
+	scanf_s("%d", &N);
+	a = (int*)malloc(N * sizeof(int));
+	for (i = 0; i < N; i++){
+		scanf_s("%d", &a[i]);
+	}
+	for (i = 1; i < N - 1; i++) {
+		if (a[i - 1] < a[i] && a[i] > a[i + 1])
+			max = i;
+	}
+	printf("%d \n", max);
+	free(a);
+	return 0;
+}
