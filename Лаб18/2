@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+#include <malloc.h>
+
+int main()
+{
+	float* a;
+	float* b;
+	int N, i, s = 0, n;
+	float sr;
+	scanf_s("%d", &N);
+	a = (float*)malloc(N * sizeof(int));
+	b = (float*)malloc(N * sizeof(int));
+	for (i = 0; i < N; i++) {
+		scanf_s("%f", &a[i]);
+	}
+	for (i = 0; i < N; i++) {
+		n = i + 1;
+		s += a[i];
+		sr = s / n;
+		b[i] = sr;
+	}
+	for (i = 0; i < N; i++) {
+		printf("%.2f \n", b[i]);
+	}
+	free(a);
+	free(b);
+	return 0;
+}
