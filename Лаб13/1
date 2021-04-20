@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+int main()
+{
+	float N, i, P;
+	P = 1;
+	scanf_s("%f", &N);
+	for (i = 1; i <= N; i++) {
+		P = P * (1 + i / 10);
+	}
+	printf("%.5f \n", P);
+}
