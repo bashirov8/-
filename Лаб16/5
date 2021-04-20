@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+#include <malloc.h>
+
+int main()
+{
+	int* a;
+	int N, i, A, B;
+	scanf_s("%d", &N);
+	a = (int*)malloc(N * sizeof(int));
+	for (i = 0; i < N; i++){
+		scanf_s("%d", &a[i]);
+	}
+	for (i = 1; i < N; i = i + 2) {
+		printf("%d \n", a[i]);
+	}
+	if (N % 2 == 0) {
+		for (i = N; i > 0; i = i - 2) {
+			printf("%d \n", a[i]);
+		}
+	}
+	else {
+		for (i = N - 1; i >= 0; i = i - 2) {
+			printf("%d \n", a[i]);
+		}
+	}
+	free(a);
+	return 0;
+}
