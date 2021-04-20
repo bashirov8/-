@@ -1,0 +1,170 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+
+int main()
+{
+	char date[100] = "\0";
+	char d1[] = "Первое \0", d2[] = "Второе \0", d3[] = "Третье \0", d4[] = "Четвертое \0", d5[] = "Пятое \0", d6[] = "Шестое \0", d7[] = "Седьмое \0", d8[] = "Восьмое \0", d9[] = "Девятое \0", d10[] = "Десятое \0";
+	char d11[] = "Одиннадцатое \0", d12[] = "Двенадцатое \0", d13[] = "Тринадцатое \0", d14[] = "Четырнадцатое \0", d15[] = "Пятнадцатое \0", d16[] = "Шестнадцатое \0", d17[] = "Семнадцатое \0", d18[] = "Восемнадцатое \0", d19[] = "Девятнадцатое \0", d20[] = "Двадцатое \0";
+	char d200[] = "Двадцать \0", m1[] = "Января \0", m2[] = "Февраля \0", m3[] = "Марта \0", m4[] = "Апреля \0", m5[] = "Мая \0", m6[] = "Июня \0", m7[] = "Июля \0", m8[] = "Августа \0", m9[] = "Сентября \0", m10[] = "Октября \0", m11[] = "Ноября \0", m12[] = "Декабря \0";
+	char d30[] = "Тридцатое \0", d31[] = "Тридцать Первое \0";
+	int d, m;
+	scanf_s("%d", &d);
+	scanf_s("%d", &m);
+	if (d < 10) {
+		switch (d) {
+		case 1:
+			strcat_s(date, d1);
+			break;
+		case 2:
+			strcat_s(date, d2);
+			break;
+		case 3:
+			strcat_s(date, d3);
+			break;
+		case 4:
+			strcat_s(date, d4);
+			break;
+		case 5:
+			strcat_s(date, d5);
+			break;
+		case 6:
+			strcat_s(date, d6);
+			break;
+		case 7:
+			strcat_s(date, d7);
+			break;
+		case 8:
+			strcat_s(date, d8);
+			break;
+		case 9:
+			strcat_s(date, d9);
+			break;
+		}
+	}
+	else {
+		div_t x;
+		x = div(d, 10);
+		if (x.quot == 1) {
+			if (x.rem == 0)
+				strcat_s(date, d10);
+			else {
+				switch (x.rem) {
+				case 1:
+					strcat_s(date, d11);
+					break;
+				case 2:
+					strcat_s(date, d12);
+					break;
+				case 3:
+					strcat_s(date, d13);
+					break;
+				case 4:
+					strcat_s(date, d14);
+					break;
+				case 5:
+					strcat_s(date, d15);
+					break;
+				case 6:
+					strcat_s(date, d16);
+					break;
+				case 7:
+					strcat_s(date, d17);
+					break;
+				case 8:
+					strcat_s(date, d18);
+					break;
+				case 9:
+					strcat_s(date, d19);
+					break;
+				}
+			}
+		}
+		if (x.quot == 2) {
+			if (x.rem == 0)
+				strcat_s(date, d20);
+			else {
+				strcat_s(date, d200);
+				switch (x.rem) {
+				case 1:
+					strcat_s(date, d1);
+					break;
+				case 2:
+					strcat_s(date, d2);
+					break;
+				case 3:
+					strcat_s(date, d3);
+					break;
+				case 4:
+					strcat_s(date, d4);
+					break;
+				case 5:
+					strcat_s(date, d5);
+					break;
+				case 6:
+					strcat_s(date, d6);
+					break;
+				case 7:
+					strcat_s(date, d7);
+					break;
+				case 8:
+					strcat_s(date, d8);
+					break;
+				case 9:
+					strcat_s(date, d9);
+					break;
+				}
+			}
+		}
+		if (x.quot == 3) {
+			if (x.rem == 0)
+				strcat_s(date, d30);
+			else
+				strcat_s(date, d31);
+		}
+	}
+	switch (m) {
+	case 1:
+		strcat_s(date, m1);
+		break;
+	case 2:
+		strcat_s(date, m2);
+		break;
+	case 3:
+		strcat_s(date, m3);
+		break;
+	case 4:
+		strcat_s(date, m4);
+		break;
+	case 5:
+		strcat_s(date, m5);
+		break;
+	case 6:
+		strcat_s(date, m6);
+		break;
+	case 7:
+		strcat_s(date, m7);
+		break;
+	case 8:
+		strcat_s(date, m8);
+		break;
+	case 9:
+		strcat_s(date, m9);
+		break;
+	case 10:
+		strcat_s(date, m10);
+		break;
+	case 11:
+		strcat_s(date, m11);
+		break;
+	case 12:
+		strcat_s(date, m12);
+		break;
+	}
+	setlocale(LC_ALL, "Rus");
+	puts(date);
+}
