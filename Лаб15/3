@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+float RingS(float R1, float R2)
+{
+	float S;
+	S = abs(3.14 * pow(R1, 2) - 3.14 * pow(R2, 2));
+	return S;
+}
+int main()
+{
+	float r1, r2, r3, r4, r5, r6, s1, s2, s3;
+	scanf_s("%f \n", &r1);
+	scanf_s("%f \n", &r2);
+	scanf_s("%f \n", &r3);
+	scanf_s("%f \n", &r4);
+	scanf_s("%f \n", &r5);
+	scanf_s("%f \n", &r6);
+	s1 = RingS(r1, r2);
+	s2 = RingS(r3, r4);
+	s3 = RingS(r5, r6);
+	printf("%.2f, %.2f, %.2f \n", s1, s2, s3);
+}
