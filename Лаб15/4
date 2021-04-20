@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+int Quarter(float X, float Y)
+{
+	int Q;
+	if (X > 0) {
+		if (Y > 0)
+			Q = 1;
+		else
+			Q = 4;
+	}
+	else {
+		if (Y > 0)
+			Q = 2;
+		else
+			Q = 3;
+	}
+	return Q;
+}
+int main()
+{
+	float x1, y1, x2, y2, x3, y3;
+	int q1, q2, q3;
+	scanf_s("%f \n", &x1);
+	scanf_s("%f \n", &y1);
+	scanf_s("%f \n", &x2);
+	scanf_s("%f \n", &y2);
+	scanf_s("%f \n", &x3);
+	scanf_s("%f \n", &y3);
+	q1 = Quarter(x1, y1);
+	q2 = Quarter(x2, y2);
+	q3 = Quarter(x3, y3);
+	printf("%d, %d, %d \n", q1, q2, q3);
+}
