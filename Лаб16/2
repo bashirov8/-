@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+#include <malloc.h>
+
+int main()
+{
+	int* a;
+	int N, i, A, d;
+	scanf_s("%d", &N);
+	scanf_s("%d", &A);
+	scanf_s("%d", &d);
+	a = (int*)malloc(N * sizeof(int));
+	a[0] = A;
+	for (i = 1; i < N; i++) {
+		a[i] = a[i - 1] * d;
+	}
+	for (i = 0; i < N; i++) {
+		printf("%d \n", a[i]);
+	}
+	return 0;
+}
