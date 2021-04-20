@@ -1,0 +1,99 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+int main()
+{
+	char text[100] = "год \0";
+	char c01[] = "бел\0", c23[] = "черн\0", c45[] = "зелен\0", c67[] = "красн\0", c89[] = "желт\0";
+	char o0[] = "ой \0", o6[] = "ого \0";
+	char a0[] = "крысы \0", a1[] = "коровы \0", a2[] = "тигра \0", a3[] = "зайца \0", a4[] = "дракона \0", a5[] = "змеи \0", a6[] = "лошади \0", a7[] = "овцы \0", a8[] = "обезьяны \0", a9[] = "курицы \0", a10[] = "собаки \0", a11[] = "свиньи \0";
+	int N;
+	scanf_s("%d", &N);
+	div_t x, y, z;
+	x = div(N, 10);
+	y = div(N, 12);
+	z = div(N + 8, 12);
+	switch (x.rem) {
+	case 0:
+	case 1:
+		strcat_s(text, c01);
+		break;
+	case 2:
+	case 3:
+		strcat_s(text, c23);
+		break;
+	case 4:
+	case 5:
+		strcat_s(text, c45);
+		break;
+	case 6:
+	case 7:
+		strcat_s(text, c67);
+		break;
+	case 8:
+	case 9:
+		strcat_s(text, c89);
+		break;
+	}
+	switch (y.rem) {
+	case 0:
+	case 1:
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+	case 9:
+	case 10:
+	case 11:
+		strcat_s(text, o0);
+		break;
+	case 6:
+	case 7:
+	case 8:
+		strcat_s(text, o6);
+		break;
+	}
+	switch (z.rem) {
+	case 0:
+		strcat_s(text, a0);
+		break;
+	case 1:
+		strcat_s(text, a1);
+		break;
+	case 2:
+		strcat_s(text, a2);
+		break;
+	case 3:
+		strcat_s(text, a3);
+		break;
+	case 4:
+		strcat_s(text, a4);
+		break;
+	case 5:
+		strcat_s(text, a5);
+		break;
+	case 6:
+		strcat_s(text, a6);
+		break;
+	case 7:
+		strcat_s(text, a7);
+		break;
+	case 8:
+		strcat_s(text, a8);
+		break;
+	case 9:
+		strcat_s(text, a9);
+		break;
+	case 10:
+		strcat_s(text, a10);
+		break;
+	case 11:
+		strcat_s(text, a11);
+		break;
+	}
+	setlocale(LC_ALL, "Rus");
+	printf("%s", text);
+}
