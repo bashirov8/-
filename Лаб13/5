@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+int main()
+{
+	float A, i, P;
+	int N;
+	P = 0;
+	scanf_s("%f", &A);
+	scanf_s("%d", &N);
+	for (i = 0; i != N + 1; i++) {
+
+		P += pow(-1, i) * pow(A, i);
+	}
+	printf("%.5f \n", P);
+}
