@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+float PowerA3(float A)
+{
+	float B = A * A * A;
+	return B;
+}
+int main()
+{
+	float a1, a2, a3, a4, a5, b1, b2, b3, b4, b5;
+	scanf_s("%f \n", &a1);
+	scanf_s("%f \n", &a2);
+	scanf_s("%f \n", &a3);
+	scanf_s("%f \n", &a4);
+	scanf_s("%f \n", &a5);
+	b1 = PowerA3(a1);
+	b2 = PowerA3(a2);
+	b3 = PowerA3(a3);
+	b4 = PowerA3(a4);
+	b5 = PowerA3(a5);
+	printf("%.2f, %.2f, %.2f, %.2f, %.2f \n", b1, b2, b3, b4, b5);
+}
