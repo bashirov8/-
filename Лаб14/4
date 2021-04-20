@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+int main()
+{
+	int P, S, K, i;
+	scanf_s("%d", &P);
+	S = 1000;
+	for (i = 1; S < 1100; i++) {
+		K = i;
+		S += S * P / 100;
+	}
+	printf("%d \n", K);
+	printf("%d \n", S);
+}
