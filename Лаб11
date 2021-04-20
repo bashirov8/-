@@ -1,0 +1,108 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+	int A, B; // Первое задание
+	scanf_s("%d", &A);
+	scanf_s("%d", &B);
+	if (A != B) {
+		if (A > B)
+			B = A;
+		else
+			A = B;
+	}
+	else {
+		A = 0;
+		B = 0;
+	}
+	printf("A = %d, B = %d \n", A, B);
+
+	int a, b, c, s; // Второе задание
+	scanf_s("%d", &a);
+	scanf_s("%d", &b);
+	scanf_s("%d", &c);
+	if ((a < b) && (a < c))
+		s = b + c;
+	else if ((b < a) && (b < c))
+		s = a + c;
+	else if ((c < a) && (c < b))
+		s = a + b;
+	printf("s = %d \n", s);
+
+	int ax, ay, bx, by, cx, cy, x1, x2, y1, y2; // Третье задание
+	float S1, S2;
+	printf("Ввести координаты точек A, B, C \n");
+	scanf_s("%d", &ax);
+	scanf_s("%d", &ay);
+	scanf_s("%d", &bx);
+	scanf_s("%d", &by);
+	scanf_s("%d", &cx);
+	scanf_s("%d", &cy);
+	x1 = bx - ax;
+	x2 = cx - ax;
+	y1 = by - ay;
+	y2 = cy - ay;
+	S1 = pow(pow(x1, 2) + pow(y1, 2), 0.5);
+	S2 = pow(pow(x2, 2) + pow(y2, 2), 0.5);
+	if (S1 < S2)
+		printf("Координаты точки B (%d, %d), расстояние между точками: %.2f \n", bx, by, S1);
+	else
+		printf("Координаты точки C (%d, %d), расстояние между точками: %.2f \n", cx, cy, S2);
+
+	int x, y; // Четвертое задание
+	scanf_s("%d", &x);
+	scanf_s("%d", &y);
+	if ((x > 0) && (y > 0))
+		printf("1 четверть \n");
+	else if ((x < 0) && (y > 0))
+		printf("2 четверть \n");
+	else if ((x < 0) && (y < 0))
+		printf("3 четверть \n");
+	else if ((x > 0) && (y < 0))
+		printf("4 четверть \n");
+	
+	int X; // Пятое задание
+	div_t d;
+	scanf_s("%d", &X);
+	d = div(X, 2);
+	if (X == 0)
+		printf("Нулевое число \n");
+	else {
+		if (X > 0) {
+			if (d.rem == 0)
+				printf("Положительное четное число \n");
+			else
+				printf("Положительное нечетное число \n");
+		}
+		else {
+			if (d.rem == 0)
+				printf("Отрицаительное четное число \n");
+			else
+				printf("Отрицательное нечетное число \n");
+		}
+	}
+
+	int Y; // Шестое задание
+	scanf_s("%d", &Y);
+	d = div(Y, 2);
+	if (Y < 10) {
+		if (d.rem == 0)
+			printf("Четное однозначное число \n");
+		else
+			printf("Нечетное однозначное число \n");
+	}
+	if (Y < 100) {
+		if (d.rem == 0)
+			printf("Четное двузначное число \n");
+		else
+			printf("Нечетное двузначное число \n");
+	}
+	if (Y < 1000) {
+		if (d.rem == 0)
+			printf("Четное трехзначное число \n");
+		else
+			printf("Нечетное трехзначное число \n");
+	}
+}
