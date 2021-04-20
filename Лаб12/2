@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+int main() 
+{
+	const char* M[4];
+	M[0] = "N";
+	M[1] = "W";
+	M[2] = "S";
+	M[3] = "E";
+	int N, i, k;
+	char C[5] = { "\0" };
+	scanf_s("%d \n", &N);
+	gets_s(C); // Вводить значение направления первой буквой слова на английском языке
+	for (i = 0; i < 4; i++) {
+		if (strcmp(C, M[i]) == 0)
+			k = i;
+	}
+
+	if (N == 1) {
+		switch (k) {
+		case 0:
+			k = 1;
+			break;
+		case 1:
+			k = 2;
+			break;
+		case 2:
+			k = 3;
+			break;
+		case 3:
+			k = 0;
+			break;
+		}
+	}
+	else if (N == -1) {
+		switch (k) {
+		case 0:
+			k = 3;
+			break;
+		case 1:
+			k = 0;
+			break;
+		case 2:
+			k = 1;
+			break;
+		case 3:
+			k = 2;
+			break;
+		}
+	}
+	printf("%s", M[k]);
+}
