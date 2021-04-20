@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+int main()
+{
+	int A, B;
+	scanf_s("%d", &A);
+	scanf_s("%d", &B);
+	while (A != B) {
+		if (A > B)
+			A -= B;
+		else
+			B -= A;
+	}
+	printf("%d", A);
+}
