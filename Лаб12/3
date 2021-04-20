@@ -1,0 +1,100 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <locale>
+#include <Windows.h>
+
+int main()
+{
+	char n10[] = "Десять \0", n11[] = "Одиннадцать \0", n12[] = "Двенадцать \0", n13[] = "Тринадцать \0", n14[] = "Четырнадцать \0", n15[] = "Пятнадцать \0", n16[] = "Шествнадцать \0", n17[] = "Семнадцать \0", n18[] = "Восемнадцать \0", n19[] = "Девятнадцать \0";
+	char n20[] = "Двадцать \0", n30[] = "Тридцать \0", n40[] = "Сорок \0";
+	char n1[] = "одно \0", n2[] = "два \0", n3[] = "три \0", n4[] = "четыре \0", n5[] = "пять \0", n6[] = "шесть \0", n7[] = "семь \0", n8[] = "восемь \0", n9[] = "девять \0";
+	char p1[] = "учебное задание \0", p0[] = "учебных заданий";
+	char text[100] = "\0";
+	int n;
+	scanf_s("%d", &n);
+	div_t x;
+	x = div(n, 10);
+	if (n < 20) {
+		switch (n) {
+		case 10:
+			strcat_s(text, n10);
+			break;
+		case 11:
+			strcat_s(text, n11);
+			break;
+		case 12:
+			strcat_s(text, n12);
+			break;
+		case 13:
+			strcat_s(text, n13);
+			break;
+		case 14:
+			strcat_s(text, n14);
+			break;
+		case 15:
+			strcat_s(text, n15);
+			break;
+		case 16:
+			strcat_s(text, n16);
+			break;
+		case 17:
+			strcat_s(text, n17);
+			break;
+		case 18:
+			strcat_s(text, n18);
+			break;
+		case 19:
+			strcat_s(text, n19);
+			break;
+		}	
+	}
+	else {
+		switch (x.quot) {
+		case 2:
+			strcat_s(text, n20);
+			break;
+		case 3:
+			strcat_s(text, n30);
+			break;
+		case 4:
+			strcat_s(text, n40);
+			break;
+		}
+		switch (x.rem) {
+		case 1:
+			strcat_s(text, n1);
+			break;
+		case 2:
+			strcat_s(text, n2);
+			break;
+		case 3:
+			strcat_s(text, n3);
+			break;
+		case 4:
+			strcat_s(text, n4);
+			break;
+		case 5:
+			strcat_s(text, n5);
+			break;
+		case 6:
+			strcat_s(text, n6);
+			break;
+		case 7:
+			strcat_s(text, n7);
+			break;
+		case 8:
+			strcat_s(text, n8);
+			break;
+		case 9:
+			strcat_s(text, n9);
+			break;
+		}
+	}
+	if (x.rem == 1)
+		strcat_s(text, p1);
+	else
+		strcat_s(text, p0);
+	setlocale(LC_ALL, "Rus");
+	printf("%s", text);
+}
